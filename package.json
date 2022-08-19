@@ -13,18 +13,21 @@
   "scripts": {
     "lint": "tslint -p . --type-check",
     "test": "jest",
-    "generate": "node ./scripts/generate.js > ./README.md"
+    "generate": "node ./scripts/generate.js > ./README.md",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
     "cheerio": "^0.22.0",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@types/cheerio": "0.22.13",
     "@types/jest": "24.0.18",
     "@types/node": "12.7.4",
     "@types/request": "2.48.2",
-    "jest": "24.9.0",
+    "jest": "25.0.0",
     "jest-playback": "2.0.2",
     "prettier": "1.17.0",
     "tslint": "5.19.0",
@@ -33,5 +36,6 @@
   },
   "engines": {
     "node": ">= 12"
-  }
+  },
+  "snyk": true
 }
